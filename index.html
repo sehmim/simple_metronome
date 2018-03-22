@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+	<title>Simple Metronome</title>
+</head>
+<body>
+<div class="container">
+	<div class="jumbotron">
+		<div class="wrapper">
+			<h1 class="text-center">
+				Simple Metronote
+			</h1>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="container" align="center">
+	<div class="wrapper">
+		<div id="circle" style="">
+
+		</div>
+		<button id="buttonStart" class="btn btn-success"> START </button>
+		
+
+
+<!----------------- TEMPO BAR!!!!! -------------->
+
+<div class="container" style="position: relative;left: -200px; top: -165px;"">
+	<div class= "wrapper">
+		<div class="btn-group dropdown">
+  			<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    			TEMPO
+  				</button>
+  			<div class="dropdown-menu" x-placement="down-start" style="position: absolute; transform: translate3d(111px, 0px, 0px); top: 0px; left: 0px; will-change: transform;">
+  				<div class="container">
+  					<input onkeyup="myFunction()" id="inputTempo" type="text" placeholder="Enter Amount"> </input>
+  				</div>
+
+  				<ul id="tempos">
+    				<li><a id="tempo1" class="dropdown-item" at ="750" href="#">80</a>
+    				<li><a id="tempo2" class="dropdown-item" at="666" href="#">90</a></li>
+    				<li><a id="tempo3" class="dropdown-item" at="600" href="#">100</a></li>
+    				<li><a id="tempo4" class="dropdown-item" at="545" href="#">110</a></li>
+    				<li><a id="tempo5" class="dropdown-item" at="500" href="#">120</a></li>
+
+    				<li><a id="tempo6" class="dropdown-item" at="461" href="#">130</a></li>
+    				<li><a id="tempo7" class="dropdown-item" at="428" href="#">140</a></li>
+    				<li><a id="tempo8" class="dropdown-item" at="400" href="#">150</a></li>
+    			</ul>
+  			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+
+function myFunction() {
+    // Declare variables
+    var input, filter, ul, li, a, i;
+    input = document.getElementById('inputTempo');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("tempos");
+    li = ul.getElementsByTagName('li');
+
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<!----------------- TIME SIGN BAR!!!!! -------------->
+
+<div class="container" style="position: relative;left: 200px; top: -280px;">
+	<div class= "wrapper">
+		<div class="btn-group dropdown">
+  			<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    			TIME SIGN
+  				</button>
+  			<div class="dropdown-menu" x-placement="down-start" style="position: absolute; transform: translate3d(111px, 0px, 0px); top: 0px; left: 0px; will-change: transform;">
+  					<div class="container">
+  						<input id="input1" type="text" placeholder="Enter Amount"> </input>
+  					</div>
+
+  				<ul id="times">
+    				<li><a id="44" class="dropdown-item" href="#">4/4</a></li>
+    				<li><a id="34" class="dropdown-item" href="#">3/4</a></li>
+    			</ul>
+  			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<!-------------TEMPO DISPLAY ------------------>
+<div class="container">
+	<div class="wrapper">
+		<div class="tempo-display">
+			<legend>CURRENT TEMPO</legend>
+			<div class="jumbotron">
+				<div id="displayTempo">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-------------TIME SIGN DISPLAY ------------------>
+<div class="container">
+	<div class="wrapper">
+		<div class="time-display">
+			<legend>TIME SIGNATURE</legend>
+			<div class="jumbotron">
+				<div id="displayTime">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+<style type="text/css">
+
+</style>
+
+<!---------------------------->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+          <audio id="mysoundclip" preload="auto">
+              <source id="aud" src="Click1.WAV"> </source>
+          </audio>
+
+<script type="text/javascript" src="index.js"></script>
+</body>
+</html>

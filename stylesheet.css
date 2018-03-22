@@ -1,0 +1,32 @@
+	#circle{
+	border-radius: 50%;
+	width: 200px;
+	height: 200px;
+	background-color: red;
+	float: center;
+    margin: 15px 15px 15px 15px;
+}
+
+.tempo-display{
+	position: relative;
+	right: 430px;
+	bottom: 300px;
+	border: 2px solid grey;
+	display: inline-block;
+	padding: 15px
+}
+
+
+.time-display{
+	position: relative;
+	left: 430px;
+	bottom: 550px;
+	border: 2px solid grey;
+	display: inline-block;
+	padding: 15px
+}
+
+@keyframes colorChange {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
