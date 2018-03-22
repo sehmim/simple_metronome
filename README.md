@@ -1,1 +1,1 @@
-# SimpleMetronome
+This is Simple Metronome made from jQuery and Bootstrap
